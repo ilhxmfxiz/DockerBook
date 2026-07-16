@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockerBook</title>
+    <link rel="stylesheet" type="text/css" href="../css/passenger_dashboard_home.css">
+    <link rel="icon" type="image/x-icon" href="../../../images/favicon/favicon.png">
+</head>
+<body>
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="site_logo">
+            <img src="../../../images/logo.png" alt="site_logo" class="site_logo_img">
+            <p class="site_logo_caption">Your Ticket to a Smooth Travel</p>
+        </div>
+        <div>
+            <div class="empty"></div>
+            <div class="sidebar_element_main">
+                <a href="./passenger_dashboard_home.html"><img src="../../../images/vector_icons/home.png" alt="home" class="sidebar_img"></a>
+                <a href="./passenger_dashboard_home.html">Home</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./passenger_dashboard_aboutMe.html"><img src="../../../images/vector_icons/aboutMe.png" alt="about_me" class="sidebar_img"></a>
+                <a href="./passenger_dashboard_aboutMe.html">About Me</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./passenger_dashboard_myBookings.html"><img src="../../../images/vector_icons/myBookings.png" alt="my_bookings" class="sidebar_img"></a>
+                <a href="./passenger_dashboard_myBookings.html">My Bookings</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./passenger_dashboard_bookASeat.html"><img src="../../../images/vector_icons/bookASeat.png" alt="book_a_seat" class="sidebar_img"></a>
+                <a href="./passenger_dashboard_bookASeat.html"> Book a Seat</a>
+            </div>
+            <div class="empty"></div>
+            <div class="sidebar_element">
+                <a href="../../login/html/login.html" onclick="logout(); return false;"><img src="../../../images/vector_icons/logout.png" alt="logout" class="sidebar_img"></a>
+                <button id="logoutButton" style="background: none; border: none; padding: 0; text-decoration: none; cursor: pointer;" ><a href="" onclick="logout(); return false;">Logout</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content_container" >
+        <div class="navbar">
+            <div class="page_name">
+                <h1 style="font-size: 40px; margin: 50px 0 0 60px">Welcome <span id="user">User</span></h1>
+            </div>
+            <div class="user_profile">
+                <h3 id="userName">Username</h3>
+                <img src="../../../images/vector_icons/passenger_avatar.png" alt="userimage" class="user_img">
+            </div>
+        </div>
+        <div class="body_content">
+            <div class="overlay" id="overlay"></div>
+            <div class="body_content">
+                <div class="form">
+                    <form class="bus_form" id="busRegForm">
+                        <div class="bus_form_header">
+                            <h2>Add a Bus to become an Owner</h2>
+                        </div>
+                        <div id="formContainer_add"></div>
+                        <div id="autocomplete-container1"></div>
+                        <div class="bus_form_footer">
+                            <button type="button" class="bus_form_button" onclick="closeForm_add()">Close</button>
+                            <input type="submit" class="bus_form_button" value="Add" id="busRegFormSubmit">
+                        </div>
+                    </form>
+                </div>
+                <div class="alertBody" id="successAlert">
+                    <img src="../../../images/Alert_icons/Success_icon.png" class="alertImg" alt="success">
+                    <div class="alertMsgSuccess" id="successMsg"></div>
+                    <button class="okButton" onclick="closeAlertSuccess()">Ok</button>
+                </div>
+                <div class="alertBody" id="failAlert">
+                    <img src="../../../images/Alert_icons/Error_icon.png" class="alertImg" alt="fail">
+                    <div class="alertMsgFail" id="failMsg"></div>
+                    <button class="okButton" onclick="closeAlertFail()">Ok</button>
+                </div>
+            </div>
+            <div class="tile_grid">
+                <div class="raw_1">
+                    <h1 style="font-size: 40px; margin: 50px 0 0 60px"></h1>
+                </div>
+                <div class="raw_2">
+                    <a href="./passenger_dashboard_myBookings.html">
+                        <div class="tile">
+                            <h1>Smooth Points</h1>
+                            <h1 class="count" id="smooth_points" style="font-size: x-large">0</h1>
+                            <img src="../../../images/vector_icons/myBookings.png" alt="bookings" class="sidebar_img">
+                        </div>
+                    </a>
+                    <a href="./passenger_dashboard_myBookings.html">
+                        <div class="tile">
+                            <h1>Next Booking</h1>
+                            <h1 class="count" id="current_booking" style="font-size: x-large">No Bookings Available</h1>
+                            <img src="../../../images/vector_icons/bookASeat.png" alt="bookings" class="sidebar_img">
+                        </div>
+                    </a>
+                    <a href="#" onclick="openForm_add()">
+                        <div class="tile">
+                            <h1>Owner Dashboard</h1>
+                            <img src="../../../images/vector_icons/owner.png" alt="time" class="sidebar_img">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/url.js"></script>
+<script src="../../../js/auth.js"></script>
+<script src="../js/passenger_dashboard_home.js"></script>
+</body>
+</html>

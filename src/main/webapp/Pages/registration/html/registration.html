@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="../css/registration.css">
+    <link rel="icon" type="image/x-icon" href="../../../images/favicon/favicon.png">
+</head>
+<body>
+<div class="login-container">
+    <div class="login_header">
+        <div class="site_logo">
+            <img src="../../../images/logo.png" alt="sitelogo" class="site_logo_img">
+            <p class="site_logo_caption">Your Ticket to a Smooth Travel</p>
+        </div>
+        <div class="navbar">
+            <div class="navbar_element">
+                <a href="../../../index.html" class="navbar_element_link">Home</a>
+            </div>
+            <div class="navbar_element">
+                <a href="../../contact/html/contact.html" class="navbar_element_link">Contact</a>
+            </div>
+            <div class="navbar_element">
+                <a href="../../about/html/about.html" class="navbar_element_link">About</a>
+            </div>
+            <div class="navbar_element">
+                <button class="navbar_element_button" onclick="window.location.href='../../login/html/login.html'">Login</button>
+            </div>
+            <div class="navbar_element" style="margin-left: -30px;">
+                <button class="navbar_element_button" style="background: white;color: #030303; border: 1px solid black;" onmouseover="this.style.backgroundColor='#ccc'; this.style.color='white';" onmouseout="this.style.backgroundColor='white'; this.style.color='black';" onclick="window.location.href='./registration.html'">Register</button>
+            </div>
+        </div>
+    </div>
+    <div class="login_body">
+        <div class="login_form">
+            <div class="form_heading">
+                <div class="form_heading_text">
+                    <h3>Register With</h3>
+                </div>
+                <div class="form_heading_logo">
+                    <img src="../../../images/logo.png" alt="form_heading_logo" class="form_heading_logo_img">
+                </div>
+            </div>
+            <form id="regForm" method="post">
+                <div class="reg_form">
+                    <div class="reg_form_left">
+                        <div class="form-group">
+                            <label for="first_name" class="reg_form_title">First name <span class="required">*</span></label><br>
+                            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="reg_form_title">Last name <span class="required">*</span></label><br>
+                            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nic" class="reg_form_title">NIC <span class="required">*</span></label><br>
+                            <input type="text" name="nic" id="nic" class="form-control" placeholder="Enter your NIC number" required>
+                        </div>
+                    </div>
+                    <div class="reg_form_right">
+                        <div class="form-group">
+                            <label for="email" class="reg_form_title">Email <span class="required">*</span></label><br>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="sample@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password<span class="required">*</span></label><br>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Your Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirm" class="reg_form_title">Confirm password <span class="required">*</span></label><br>
+                            <input type="password" name="password_confirm" id="password_confirm" class="form-control" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_footer">
+                    <div class="form-group-btn">
+                        <button type="submit" class="btn-login">Register</button><br>
+                    </div>
+                    <div id="loading-spinner" >
+                        <div class="spinner"></div>
+                    </div>
+                    <p style="font-size: large">Already has an account? <a href="../../login/html/login.html" style="text-decoration: none; color: red; font-family: Roboto, serif; font-style: normal; font-weight: 500; line-height: normal;">Login</a> </p>
+                </div>
+            </form>
+            <div class="overlay" id="overlay"></div>
+            <div class="alertBody" id="registrationSuccess">
+                <img src="../../../images/Alert_icons/Success_icon.png" class="successImg" alt="success">
+                <div class="alertMsgSuccess" id="successMsg">Registration Success!</div>
+                <button class="okButton" onclick="closeAlertSuccess()">Ok</button>
+            </div>
+            <div class="alertBody" id="registrationFail">
+                <img src="../../../images/Alert_icons/Error_icon.png" class="failImg" alt="fail">
+                <div class="alertMsgFail" id="failMsg">Registration Failed!</div>
+                <button class="tryButton" onclick="closeAlertFail()">Try Again</button>
+            </div>
+            <div class="otpVerification" id="otpVerification">
+                <h2 style="color:green">4 Digit OTP Has Sent To <span id="user_email">Your Email</span> For Verification.</h2>
+                <h3>Please check your inbox and enter the code.</h3>
+                <div class="otp-container">
+                    <input type="number" name="otp" id="otp" class="otp-input" maxlength="4" placeholder="XXXX" required>
+                </div>
+                <div id="empty_otp" style="color:red"></div>
+                <span class="resend">Resend OTP</span>
+                <div id="loading-spinner2" >
+                    <div class="spinner"></div>
+                </div>
+                <div style="display:flex; flex-direction:row; gap: 40px; margin-top: 20px;">
+                    <button class="cancelButton" onclick="closeOTPVerification()">Cancel</button>
+                    <button type="submit" class="proceedButton" onclick="verifyOTP()">Proceed</button>
+                </div>
+            </div>
+            <div class="alertBody" id="alertSuccess">
+                <img src="../../../images/Alert_icons/Success_icon.png" class="alertImg" alt="success">
+                <div class="alertMsgSuccess" id="alertMsgSuccess"></div>
+                <button class="okButton" onclick="closeAlert()">Ok</button>
+            </div>
+            <div class="alertBody" id="alertFail">
+                <img src="../../../images/Alert_icons/Error_icon.png" class="alertImg" alt="fail">
+                <div class="alertMsgFail" id="alertMsg"></div>
+                <button class="okButton" onclick="closeAlert()">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/url.js"></script>
+<script src="../js/registration.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+body{
+    margin:0;
+}
+
+.login-container{
+    background-color: white;
+    width:100%;
+}
+
+.login_header{
+    flex:1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.site_logo{
+    flex: 1;
+    margin-left: 20px;
+}
+
+.site_logo_img{
+    margin-top: 10px;
+    width: 200px;
+}
+
+.welcome_logo_img{
+    margin-top: -20px;
+    width: 300px;
+    margin-bottom: -10px;
+}
+
+.welcome_logo{
+    margin-bottom: 20px;
+}
+
+.site_logo_caption{
+    margin-top: -30px;
+    margin-left: 50px;
+    font-size: 10px;
+}
+
+.navbar{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    justify-content: flex-end;
+}
+
+.navbar_element_link{
+    text-decoration: none;
+    color: #030303;
+    font-family: Roboto, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.navbar_element_link:hover{
+    color: #ff0000;: rgba(255, 1, 1, 0.47);
+}
+
+.navbar_element_button{
+    font-family: Roboto, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-right: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.navbar_element_button:hover {
+    background-color: rgba(255, 1, 1, 0.47);
+}
+
+.home_body{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.home_welcome{
+    display: flex;
+    align-items: center;
+    width: 190vh;
+    height: 650px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    mix-blend-mode: darken;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-image: url('../images/Wallpapers/Wallpaper1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+}
+
+.home_welcome_content{
+    width: 550px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-left: 750px;
+    background-color: rgba(217, 217, 217, 0.85);
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.home_caption{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+.home_caption_img{
+    width: 500px;
+    height: 300px;
+    border-radius: 30px;
+    margin-left: -30px;
+}
+
+.home_caption_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

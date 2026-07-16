@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DockerBook</title>
+    <link rel="icon" type="image/x-icon" href="../../../images/favicon/favicon.png">
+    <link rel="stylesheet" type="text/css" href="../css/owner_dashboard_report.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+<div class="dashboard">
+    <div class="sidebar">
+        <div class="site_logo">
+            <img src="../../../images/logo.png" alt="site_logo" class="site_logo_img">
+            <p class="site_logo_caption">Your Ticket to a Smooth Travel</p>
+        </div>
+        <div>
+            <div class="sidebar_element">
+                <a href="./owner_dashboard_home.html"><img src="../../../images/vector_icons/home.png" alt="home" class="sidebar_img"></a>
+                <a href="./owner_dashboard_home.html">Home</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="owner_dashboard_bus.html"><img src="../../../images/vector_icons/bus.png" alt="bus" class="sidebar_img"></a>
+                <a href="owner_dashboard_bus.html">Buses</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="owner_dashboard_busprofile.html"><img src="../../../images/vector_icons/user.png" alt="Bus_profile" class="sidebar_img"></a>
+                <a href="owner_dashboard_busprofile.html">Bus Profile</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./owner_dashboard_drivers.html"><img src="../../../images/vector_icons/driver.png" alt="driver" class="sidebar_img"></a>
+                <a href="./owner_dashboard_drivers.html">Driver</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./owner_dashboard_conductor.html"><img src="../../../images/vector_icons/conductor.png" alt="conductor" class="sidebar_img"></a>
+                <a href="./owner_dashboard_conductor.html">Conductor</a>
+            </div>
+            <div class="sidebar_element_main">
+                <a href="./owner_dashboard_report.html"><img src="../../../images/vector_icons/report.png" alt="report" class="sidebar_img"></a>
+                <a href="./owner_dashboard_report.html">Reports</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="./owner_dashboard_ratings.html"><img src="../../../images/vector_icons/review.png" alt="ratings" class="sidebar_img"></a>
+                <a href="./owner_dashboard_ratings.html">Ratings</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="../../passenger/html/passenger_dashboard_home.html"><img src="../../../images/vector_icons/login.png" alt="login" class="sidebar_img"></a>
+                <a href="../../passenger/html/passenger_dashboard_home.html">Login as a Passenger</a>
+            </div>
+            <div class="sidebar_element">
+                <a href="../../login/html/login.html" onclick="logout(); return false;"><img src="../../../images/vector_icons/logout.png" alt="logout" class="sidebar_img"></a>
+                <button id="logoutButton" style="background: none; border: none; padding: 0; text-decoration: none; cursor: pointer;" ><a href="" onclick="logout(); return false;">Logout</a></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content_container">
+        <div class="navbar">
+            <div class="page_name">
+                <h1>Report</h1>
+            </div>
+            <div class="user_profile">
+                <h3 id="userName">Username</h3>
+                <img src="../../../images/vector_icons/owner_avatar.png" alt="userimage" class="user_img">
+            </div>
+        </div>
+        <div class="body_content">
+            <div class="functions">
+                <div class="search_box">
+                    <label for="StartdatePicker">Date From</label>
+                    <input type="date" id="StartdatePicker">
+                    <span class="error-message" id="startDateError"></span>
+                </div>
+                <div class="search_box">
+                    <label for="EnddatePicker">Date to</label>
+                    <input type="date" id="EnddatePicker">
+                    <span class="error-message" id="endDateError"></span>
+                </div>
+                <div class="search_box" >
+                    <div>
+                        <label for="busregNoSelect">Select Bus Reg No:</label>
+                            <select id="busregNoSelect">
+                                <option value="" disabled selected>Select Bus Reg No:</option>
+                            </select>
+                        </label>
+                        <span class="error-message" id="busRegNoError"></span>
+                    </div>
+                </div>
+                <div class="search_box">
+                    <button class="Searchbutton" onclick="generateReport()">Generate Report</button>
+                </div>
+            </div>
+            <div id="reportContainer" >
+                <div id="tableContainer" >
+                    <table id="reportTable">
+                        <tbody>
+                        <tr>
+                            <th>Time Period</th>
+                            <td id="timePeriod">-</td>
+                        </tr>
+                        <tr>
+                            <th>Bus Reg No</th>
+                            <td id="busRegNo">-</td>
+                        </tr>
+                        <tr>
+                            <th>Total Number of Seats Booked</th>
+                            <td id="totalSeatsBooked">-</td>
+                        </tr>
+                        <tr>
+                            <th>Total Number of Payments Deleted</th>
+                            <td id="totalPaymentsDeleted">-</td>
+                        </tr>
+                        <tr>
+                            <th>Total Revenue</th>
+                            <td id="finalAmount">-</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <center><button class="button" id="downloadReportButton" disabled>Download Report</button></center>
+            </div>
+
+            <div class="overlay" id="overlay"></div>
+            <div class="alertBody" id="successAlert">
+                <img src="../../../images/Alert_icons/Success_icon.png" class="alertImg" alt="success">
+                <div class="alertMsgSuccess" id="alertMsgSuccess"></div>
+                <button class="okButton" onclick="closeAlertSuccess()">Ok</button>
+            </div>
+            <div class="alertBody" id="failAlert">
+                <img src="../../../images/Alert_icons/Error_icon.png" class="alertImg" alt="fail">
+                <div class="alertMsgFail" id="failMsg"></div>
+                <button class="okButton" onclick="closeAlertFail()">Ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../../../js/url.js"></script>
+<script src="../../../js/auth.js"></script>
+<script src="../js/owner_dashboard_report.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+  <display-name>Archetype Created Web Application</display-name>
+  <session-config>
+    <session-timeout>1</session-timeout>
+  </session-config>
+
+  <servlet>
+    <servlet-name>RegisterController</servlet-name>
+    <servlet-class>com.dockerbook.controller.RegisterController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterController</servlet-name>
+    <url-pattern>/registerController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.dockerbook.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/loginController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BookingController</servlet-name>
+    <servlet-class>com.dockerbook.controller.BookingController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookingController</servlet-name>
+    <url-pattern>/bookingController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BusController</servlet-name>
+    <servlet-class>com.dockerbook.controller.BusController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusController</servlet-name>
+    <url-pattern>/busController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>BusprofileController</servlet-name>
+    <servlet-class>com.dockerbook.controller.BusprofileController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BusprofileController</servlet-name>
+    <url-pattern>/busprofileController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ConductorController</servlet-name>
+    <servlet-class>com.dockerbook.controller.ConductorController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConductorController</servlet-name>
+    <url-pattern>/conductorController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DriverController</servlet-name>
+    <servlet-class>com.dockerbook.controller.DriverController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DriverController</servlet-name>
+    <url-pattern>/driverController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LogOutController</servlet-name>
+    <servlet-class>com.dockerbook.controller.LogOutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogOutController</servlet-name>
+    <url-pattern>/logOutController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PassengerController</servlet-name>
+    <servlet-class>com.dockerbook.controller.PassengerController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PassengerController</servlet-name>
+    <url-pattern>/passengerController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ScheduleController</servlet-name>
+    <servlet-class>com.dockerbook.controller.ScheduleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScheduleController</servlet-name>
+    <url-pattern>/scheduleController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>TimeKeeperController</servlet-name>
+    <servlet-class>com.dockerbook.controller.TimeKeeperController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TimeKeeperController</servlet-name>
+    <url-pattern>/timekeeperController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>RouteController</servlet-name>
+    <servlet-class>com.dockerbook.controller.RouteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RouteController</servlet-name>
+    <url-pattern>/routeController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>LocationController</servlet-name>
+    <servlet-class>com.dockerbook.controller.LocationController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LocationController</servlet-name>
+    <url-pattern>/locationController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>OwnerController</servlet-name>
+    <servlet-class>com.dockerbook.controller.OwnerController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OwnerController</servlet-name>
+    <url-pattern>/ownerController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>MailController</servlet-name>
+    <servlet-class>com.dockerbook.controller.MailController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailController</servlet-name>
+    <url-pattern>/mailController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SeatAvailabilityController</servlet-name>
+    <servlet-class>com.dockerbook.controller.SeatAvailabilityController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SeatAvailabilityController</servlet-name>
+    <url-pattern>/seatAvailabilityController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PaymentController</servlet-name>
+    <servlet-class>com.dockerbook.controller.PaymentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PaymentController</servlet-name>
+    <url-pattern>/paymentController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReviewController</servlet-name>
+    <servlet-class>com.dockerbook.controller.ReviewController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReviewController</servlet-name>
+    <url-pattern>/reviewController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>FeasibilityController</servlet-name>
+    <servlet-class>com.dockerbook.controller.FeasibilityController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FeasibilityController</servlet-name>
+    <url-pattern>/feasibilityController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ItemCountController</servlet-name>
+    <servlet-class>com.dockerbook.controller.ItemCountController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ItemCountController</servlet-name>
+    <url-pattern>/itemCountController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>PointController</servlet-name>
+    <servlet-class>com.dockerbook.controller.PointController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PointController</servlet-name>
+    <url-pattern>/pointController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>SmoothPointController</servlet-name>
+    <servlet-class>com.dockerbook.controller.SmoothPointController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SmoothPointController</servlet-name>
+    <url-pattern>/smoothPointController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>OTPController</servlet-name>
+    <servlet-class>com.dockerbook.controller.OTPController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OTPController</servlet-name>
+    <url-pattern>/otpController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ReportController</servlet-name>
+    <servlet-class>com.dockerbook.controller.ReportController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportController</servlet-name>
+    <url-pattern>/reportController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>AdminController</servlet-name>
+    <servlet-class>com.dockerbook.controller.AdminController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminController</servlet-name>
+    <url-pattern>/adminController</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+      <servlet-name>BusVerifyController</servlet-name>
+      <servlet-class>com.dockerbook.controller.BusVerifyController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>BusVerifyController</servlet-name>
+      <url-pattern>/busVerifyController</url-pattern>
+    </servlet-mapping>
+
+  <listener>
+    <listener-class>com.dockerbook.controller.MyServletContextListener</listener-class>
+  </listener>
+
+</web-app>
