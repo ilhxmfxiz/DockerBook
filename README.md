@@ -2,6 +2,13 @@
 
 DockerBook is a web application project. This repository contains the source code and resources required to run and develop the application.
 
+## Teck Stack
+- Frontend: HTML/CSS/JavaScript
+- Backend: Java with Apache Tomcat
+- Database: MySQL
+- Mobile App: Java
+- Version Control: GitHub
+
 ## Features
 - User authentication
 - Booking and management features
